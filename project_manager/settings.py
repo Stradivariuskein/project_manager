@@ -34,6 +34,9 @@ DEBUG = True
 
 PROXY_IP = os.getenv('PROXY_IP')
 HOST = os.getenv("NGROK_HOST")
+if HOST == None:
+    HOST = "https://test.test"
+
 print(f"proxy ip: {PROXY_IP}")
 ALLOWED_HOSTS = ["192.168.2.115", "localhost", "127.0.0.1", HOST.split("//")[1]]
 CSRF_TRUSTED_ORIGINS = [HOST]
@@ -158,12 +161,12 @@ EXEMPT_URLS = [
 # my const
 
 
-PORTAINER_TOKEN = "ptr_F1eKgocVceLcG5/mkBEB2oCGcX4GZQ8dkHLCc7Q3UJU="
+PORTAINER_TOKEN = "ptr_PQfzCxSr2lDMsETjWxuBZtAepB4OgwbvBYcc/unTqlU="#PORTAINER_TOKEN = "ptr_F1eKgocVceLcG5/mkBEB2oCGcX4GZQ8dkHLCc7Q3UJU="
 PORTAINER_IP = os.getenv('PORTAINER_IP')
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
-NETWORK_NAME = "docker_deploy_coders" # nombre de la interfaz de red creada por docker
+NETWORK_NAME ="project_manager" #NETWORK_NAME = "code_manager_coders" # nombre de la interfaz de red creada por docker
 
 WHASTAPP_API_URL = "http://172.20.0.9:3000/"
 WHASTAPP_API_KEY = "apikey_123"

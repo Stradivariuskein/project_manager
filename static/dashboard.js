@@ -66,19 +66,23 @@ async function renderProjects() {
         const tr = document.createElement('tr');
 
         const containerIdTd = document.createElement('td');
+        containerIdTd.setAttribute("data-label", "Docker ID")
         containerIdTd.textContent = project.container.dockerId.slice(-10);
         console.log(project.container.dockerId)
         tr.appendChild(containerIdTd);
 
         const nameTd = document.createElement('td');
+        nameTd.setAttribute("data-label", "Name")
         nameTd.textContent = project.name;
         tr.appendChild(nameTd);
 
         const imageIdTd = document.createElement('td');
+        imageIdTd.setAttribute("data-label", "Image ID")
         imageIdTd.textContent = project.container.imageId.slice(-10);
         tr.appendChild(imageIdTd);
 
         const ipTd = document.createElement('td');
+        ipTd.setAttribute("data-label", "IP")
         const link_code = document.createElement('a');
         link_code.textContent = project.container.ip;
         link_code.setAttribute("target","_blank");
@@ -87,14 +91,17 @@ async function renderProjects() {
         tr.appendChild(ipTd);
 
         const portsTd = document.createElement('td');
+        portsTd.setAttribute("data-label", "Ports")
         portsTd.textContent = project.container.ports;
         tr.appendChild(portsTd);
 
         const statusTd = document.createElement('td');
+        statusTd.setAttribute("data-label", "Status")
         statusTd.textContent = project.container.status;
         tr.appendChild(statusTd);
 
         const actionsTd = document.createElement('td');
+        actionsTd.setAttribute("data-label", "Actions")
         const playButton = document.createElement('button');
         playButton.textContent = 'Play';
         playButton.onclick = function() {
